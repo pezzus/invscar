@@ -32,7 +32,7 @@ def do_plot_2d(res):
 
     mm.coordinates.dat.data[:] = coord_orig
 
-def do_plot_3d(backend='html'):
+def do_plot_3d(res,backend='html'):
     import pyvista as pv
     pv.set_jupyter_backend(backend)
     import vtk
