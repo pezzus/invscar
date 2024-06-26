@@ -2,6 +2,8 @@
 
 Giulia Pozzi, Davide Ambrosi, Simone Pezzuto
 
+![Teaser Inverse Scar](images/teaser.gif)
+
 arxiv: [https://arxiv.org/abs/2404.11137](https://arxiv.org/abs/2404.11137)
 
 This repository contains a demo implementation the paper [_Reconstruction of the local contractility of the cardiac muscle from deficient apparent kinematics_](#citation).
