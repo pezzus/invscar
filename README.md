@@ -6,6 +6,8 @@ Giulia Pozzi, Davide Ambrosi, Simone Pezzuto
 
 arxiv: [https://arxiv.org/abs/2404.11137](https://arxiv.org/abs/2404.11137)
 
+Try on colab! [![InvScar in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KePQ0ncEYbPp7jXSdAUW22pDyt5qIN-5?usp=sharing)
+
 This repository contains a demo implementation the paper [_Reconstruction of the local contractility of the cardiac muscle from deficient apparent kinematics_](#citation).
 
 The code solves an inverse problem for delineating a non-contractile region from displacement data and assuming an hyperelastic constitutive law.
