@@ -34,8 +34,7 @@ def do_plot_2d(res):
 
 def do_plot_3d(res,backend='html'):
     import pyvista as pv
-    pv.set_jupyter_backend(backend)
-    import vtk
+    from vtkmodules.vtkCommonDataModel import VTK_TETRA
     from firedrake.output import paraview_reordering
 
     # HTML visualization
@@ -46,13 +45,13 @@ def do_plot_3d(res,backend='html'):
     reorder = paraview_reordering.vtk_lagrange_tet_reorder(u.ufl_element())
     elm  = mm.coordinates.cell_node_map().values[:,reorder]
 
-    mesh_pv = pv.UnstructuredGrid({vtk.VTK_TETRA: elm}, pts)
+    mesh_pv = pv.UnstructuredGrid({VTK_TETRA: elm}, pts)
     #mesh_pv.point_data['u'] = u.dat.data_ro
     mesh_pv.point_data['alpha'] = res.alpha.dat.data_ro
     contours = mesh_pv.contour([0.5])
 
-    plotter = pv.Plotter(window_size=[600, 600])
+    plotter = pv.Plotter(notebook=True,window_size=[600, 600])
     plotter.add_mesh(mesh_pv, show_scalar_bar=False, show_edges=False, opacity=0.5, color='white')
     plotter.add_mesh(contours, show_scalar_bar=False, color='red')
 
-    plotter.show()
+    plotter.show(jupyter_backend=backend)
